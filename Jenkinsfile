@@ -1,9 +1,9 @@
-node{
-  stage('SCM Checkout'){
-  git 'https://github.com/javahometech/my-app'
+node {
+  stage('SCM Checkout') {
+    git 'https://github.com/javahometech/my-app'
   }
-  stage('Compile-Package'){
-    def mvnHome = tool name:'maven'
-    sh "${mvnHome}/bin/mavn package"
+  stage('Compile-Package') {
+    def mvnHome = tool name: 'maven'
+    sh "${mvnHome}/bin/mvn package"
   }
 }
